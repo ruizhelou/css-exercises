@@ -5,6 +5,10 @@
 
 .container {
   text-align: center;
+
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  gap: 4px;
 }
 
 .container div {
@@ -15,8 +19,21 @@
   color: white;
 }
 
+/* ========== MENU ========== */
+
 .header {
   background-color: #393f4d;
+
+  grid-row: 1 / 2;
+  grid-column: 1 / 3;
+  
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+.header .logo {
+   justify-self: start;
+   align-self: center;
 }
 
 .menu ul,
@@ -24,8 +41,27 @@
   font-size: 16px;
 }
 
+.menu {
+  align-content: center;
+}
+
+.menu ul {
+  list-style-type: none;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* ========== SIDE BAR ========== */
+
 .sidebar {
   background-color: #C50208;
+
+  grid-row: 2 / 4;
+  grid-column: 1 / 2;
+
+  display: grid;
+  gap: 50px;
 }
 
 .sidebar .photo {
@@ -34,6 +70,9 @@
   font-size: 12px;
   font-weight: normal;
   border-radius: 10px;
+
+  display: grid;
+  place-content: center;
 }
 
 
@@ -42,16 +81,33 @@
   color: black;
   font-size: 16px;
   font-weight: normal;
+
+  display: grid;
+  place-content: center;
 }
+
+/* ========== NAV BAR ========== */
 
 .nav {
   background-color: #C50208;
+
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+  align-content: center;
 }
 
 .nav ul li {
   font-size: 16px;
   text-transform: uppercase;
+  list-style-type: none;
 }
+
+.nav ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* ========== ARTICLE ========== */
 
 .article {
   background-color: #bccbde;
@@ -81,8 +137,13 @@
   text-align: center;
 }
 
+/* ========== FOOTER ========== */
+
 .footer {
   background-color: #393f4d;
+
+  grid-row: 4 / 5;
+  grid-column: 1 / 3;
 }
 
 .footer p {
